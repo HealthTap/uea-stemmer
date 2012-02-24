@@ -110,6 +110,8 @@ class UEAStemmer
     @rules << Rule.new(/^[A-Z]+$/, 0, 91)
     @rules << Rule.new(/^((.*[A-Z].*[A-Z])|([A-Z]{1})).*$/, 0, 92)
 
+    @rules << ConcatenatingEndingRule.new('eating', 6, 100, 'eat')
+
     @rules << EndingRule.new('aceous', 6, 1)
     @rules << EndingRule.new('ces', 1, 2)
     @rules << EndingRule.new('cs', 0, 3)
